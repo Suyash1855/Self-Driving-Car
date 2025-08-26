@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self Driving car</title>
+    <style>
+        body{
+            margin: 0;
+            background-color: darkgray;
+            overflow: hidden;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        canvas{
+            background-color: lightgray;
+        }
+
+        #netwrkCanvas{
+            background-color: black;
+        }
+        .buttons{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .button-row {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+
+
+        @media (max-width: 600px) {
+            body{
+                flex-direction: column;
+    overflow: scroll;
+            }
+        }
+    </style>
+        
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div class="buttons">
+        <div class="button-row">
+            <button onclick="save()">Save</button>
+            <button onclick="discard()">Discard</button>
+            <button id="mode-toggle" onclick="toggleMode()">Switch to Manual</button>
+        </div>
+        <div id="debug-info" style="color: white; font-family: monospace;">
+            Mode: <span id="current-mode">AI</span> 
+        </div>
+    </div>
+    <canvas id="netwrkCanvas"></canvas>
+    <script src="visualizer.js"></script>
+    <script src="network.js"></script>
+    <script src="sensor.js"> </script>
+    <script src="utils.js"></script>
+    <script src="road.js"></script>
+    <script src="car.js"></script>
+    <script src="trafficManager.js"></script>
+    <script src="controls.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
